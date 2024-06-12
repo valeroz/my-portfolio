@@ -1,0 +1,923 @@
+body {
+  font-family: 'IBM Plex Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 1550px;
+  padding: 0px 15px;
+  transform: scale(0.9); /* Масштабування до 90% */
+  margin: 0 auto;
+}
+
+.menu-bar {
+  position: fixed;
+  margin: 0 auto;
+  padding: 0px 15px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  z-index: 1000;
+}
+
+.menu-bar a {
+  text-decoration: none;
+  color: #1B1C23;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 0 46px;
+}
+
+.menu-bar .start {
+  margin-right: 20px; /* Отступ между "Start" и следующими кнопками */
+}
+
+.menu-bar .services,
+.menu-bar .portfolio,
+.menu-bar .news,
+.menu-bar .contact {
+  margin-left: 46px; /* Отступ между кнопками "Services", "Portfolio", "News", "Contact" */
+}
+
+.menu-bar .login {
+  background-color: #FF694B;
+  border: 1px solid #FF694B;
+  padding: 8px 40px;
+  color: #fff;
+  font-weight: 500;
+  margin-left: auto; /* "Login" прижат к правому краю */
+  margin-right: 50px; /* Отступ от правого края */
+}
+
+.menu-bar a:hover,
+.menu-bar a:focus {
+  color: #FF694B;
+}
+
+.menu-bar a.active {
+  color: #FF694B; /* Зміна кольору активної кнопки */
+}
+
+/* Анімація для кнопки Login */
+.login {
+  background-color: #FF694B;
+  border: 1px solid #FF694B;
+  padding: 8px 40px;
+  color: #fff;
+  font-weight: 500;
+  margin-left: auto;
+  margin-right: 50px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.login:hover {
+  background-color: #e55d3d;
+  transform: scale(1.05);
+}
+
+.login:active {
+  transform: scale(0.95);
+}
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 631px; /* Высота изображения */
+  margin-top: 60px; /* Отступ сверху, чтобы фрейм начинался после меню */
+}
+
+.hero-image {
+  position: absolute;
+  width: 645px;
+  height: 631px;
+  left: 536px;
+  right: 210px;
+  top: 0;
+  bottom: 0;
+}
+
+.short-title {
+  position: absolute;
+  left: 90px;
+  top: 59.5px;
+  display: flex; /* Добавляем flex-контейнер */
+  align-items: center; /* Выравниваем элементы по вертикали */
+}
+
+.line {
+  width: 50px;
+  height: 1px;
+  background-color: rgb(255, 105, 75);
+}
+
+.title-text {
+  margin-left: 17px; /* Отступ слева для текста */
+  color: rgb(255, 105, 75);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: 5%;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.banner-content {
+  position: absolute;
+  left: 90px;
+  top: 53px;
+  width: 450px;
+  height: auto;
+}
+
+.subtitle {
+  color: #000000;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 74px;
+  font-weight: 400;
+  line-height: 74px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.description {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  left: 10px;
+}
+
+.description p {
+  color: #757683;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 38px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-right: 20px;
+}
+
+.cta {
+  position: absolute;
+  top: 485px;
+  display: flex;
+  align-items: center;
+}
+
+.bg {
+  width: 40px;
+  height: 40px;
+  background: rgb(27, 28, 35);
+  border-radius: 0px 10px 0px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg svg {
+  width: 24px;
+  height: 24px;
+}
+
+.hire-me {
+  margin-left: 10px;
+  color: rgb(27, 28, 35);
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 38px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.vertical-line {
+  position: absolute;
+  width: 1px;
+  height: 100%; /* Высота линии равна высоте контейнера с описанием */
+  background-color: rgb(200, 200, 200);
+  top: 0;
+  left: -10px; /* Позиционируем линию слева от описания */
+}
+
+.banner-extra {
+  position: absolute;
+  bottom:100px; /* Отступ от нижнего края контейнера */
+  right: 90px;
+  text-align: right;
+}
+
+.extra-title {
+  color: #757683;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.extra-subtitle {
+  color: #3A362A;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 22px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.explore-now {
+  color: #FF694B;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  text-decoration: underline;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.explore-now:hover {
+  color: #FF8568;
+}
+
+
+#project-container {
+  padding: 40px 0;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 50px;
+  color: #1B1C23;
+}
+
+.gallery {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.gallery-item {
+  flex: 0 0 30%;
+  box-sizing: border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.gallery-content {
+  margin-top: 5px;
+  margin-left: 5px;
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.project-description {
+  font-size: 14px;
+  line-height: 20px;
+  color: #757683;
+}
+
+.gallery-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.services-container {
+  margin: 0 auto;
+  padding: 50px 15px;
+  transform: scale(0.9);
+  text-align: center;
+  background-color: #F8F8F8;
+  margin-bottom: 80px;
+}
+
+.services-title {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 40px;
+  color: #1B1C23;
+  text-align: center;
+}
+
+.services-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.service-block {
+  background-color: #FFFFFF;
+  padding: 20px;
+  width: calc(33.33% - 20px); /* Рассчитываем ширину для трех блоков в строке с отступами */
+  box-sizing: border-box;
+  border-radius: 8px;
+  text-align: left;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer; /* Додаємо курсор pointer */
+}
+
+.service-block:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.service-icon {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.service-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #1B1C23;
+}
+
+.service-description {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: #757683;
+}
+
+/* Центрирование последних двух блоков */
+@media (min-width: 768px) {
+  .service-block:nth-child(4), .service-block:nth-child(5) {
+      width: calc(33.33%); /* Ширина блока */
+      justify-content: center; /* Выравнивание по горизонтали по центру */
+  }
+}
+
+@media (max-width: 767px) {
+  .service-block {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}
+
+.education-container {
+  margin-top: -160px;
+  padding: 80px 15px;
+  display: flex;
+  justify-content: space-between;
+  transform: scale(0.9); /* Масштабування до 90% */
+  align-items: flex-start; /* Устанавливаем выравнивание по верхнему краю */
+}
+
+.education-block {
+  width: 710px;
+  background-color: #FFFFFF;  
+  box-sizing: border-box;
+}
+
+.education-photo-wrapper {
+  position: relative;
+  top: 80px; /* Явное указание верхней границы */
+  width: 668px;
+  height: 455px;
+  margin-left: 45px;
+}
+
+.education-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.education-header {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 20px;
+  color: #1B1C23;
+}
+
+.education-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.education-details {
+  max-width: 70%;
+}
+
+.education-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #1B1C23;
+}
+
+.education-description {
+  font-size: 18px;
+  font-weight: 400;
+  color: #757683;
+}
+
+.education-dates {
+  font-size: 18px;
+  font-weight: 400;
+  color: #757683;
+  text-align: right;
+}
+
+.education-divider {
+  height: 1px;
+  background-color: #C8C8C8;
+  margin-bottom: 20px;
+}
+
+
+.about-container {
+  display: flex;
+  width: 1520px;
+  margin: 0 auto;
+}
+
+.about-image {
+  width: 453px;
+  height: 507px;
+  margin-right: 56px;
+}
+
+.about-content {
+  width: 760px;
+  padding-bottom: 29px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin: auto;
+}
+
+.about-title {
+  font-size: 48px;
+  font-weight: 400;
+  color: #1B1C23;
+  margin-bottom: 60px;
+}
+
+.about-subblocks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.about-subblock {
+  display: flex;
+  align-items: flex-start;
+  width: 360px; /* Adjust as needed for spacing */
+}
+
+.about-number {
+  width: 40px;
+  height: 40px;
+  background-color: #FF694B;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.about-subblock-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.subblock-title {
+  font-size: 24px;
+  font-weight: 400;
+  color: #1B1C23;
+  margin-bottom: 10px;
+  margin-top: 5px; /* Add top margin to align with the number block */
+}
+
+.subblock-description {
+  font-size: 18px;
+  font-weight: 400;
+  color: #757683;
+  line-height: 24px;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+.stat-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #757683;
+  display: flex;
+  align-items: center;
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: 500;
+  color: #FF694B;
+  margin-right: 5px;
+}
+
+.cta-container {
+  position: relative;
+  width: 1520px;
+  height: 518px;
+  margin-top: 30px;
+}
+
+.cta-image {
+  width: 508px;
+  height: 425px;
+  margin-left: 62px;
+  float: left; /* Змінено на плаваючий лівий край */
+}
+
+.cta-content {
+  position: absolute;
+
+  right: 122px; /* Відступ від правого краю фото */
+
+  text-align: left; /* Вирівнювання тексту зліва */
+  z-index: 1;
+
+}
+
+.cta-title {
+  font-size: 48px;
+  font-weight: 400;
+  color: #1B1C23;
+  margin-bottom: 10px;
+}
+
+
+.cta-description {
+  font-size: 18px;
+  color: #757683;
+  margin-top: 20px;
+}
+
+.cta-button {
+  width: 172px;
+  height: 60px;
+  background-color: #FF694B;
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 30px;
+}
+
+.cta-button:hover {
+  background-color: #E65A3F;
+}
+
+.portfolio-section {
+  max-width: 1520px;
+  margin: 1px auto;
+  padding: 1px;
+  background-color: #f7f7f7;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.portfolio-section h2 {
+  font-size: 36px;
+  font-weight: 400;
+  margin-top: 15px;
+  color: #1B1C23;
+  text-align: center;
+}
+
+.news-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.news-item {
+  flex: 1 1 30%;
+  border: 1px solid #ddd;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  text-align: left;
+  overflow: hidden;
+}
+
+.news-item img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.news-item h2 {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.news-item p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+  max-height: 120px;
+  overflow-y: auto; /* Дозволяє вертикальний скрол */
+  margin-bottom: 10px;
+}
+
+.news-item .read-more,
+.news-item .read-less {
+    color: #FF694B;
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.news-item .read-more:hover,
+.news-item .read-less:hover {
+    text-decoration: underline;
+}
+
+/* Контейнер для контактної форми */
+#contact {
+  margin: 50px auto;
+  max-width: 800px;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+#contact h2 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-size: 34px;
+  font-weight: 400;
+  color: #1B1C23;
+  text-align: center;
+  margin-top: -10px;
+}
+
+#contact form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+#contact form input,
+#contact form textarea,
+#contact form select {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#contact form textarea {
+    height: 150px;
+    resize: none;
+}
+
+#contact form select {
+    height: 50px;
+    background-color: #fff;
+}
+
+#contact form button {
+    background-color: #FF694B;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+#contact form button:hover {
+    background-color: #e55d3d;
+}
+
+
+
+/* Modal styles */
+.modal {
+  display: none; /* Початково приховуємо модальне вікно */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Півпрозорий чорний фон */
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 300px; /* Ширина контенту модального вікна */
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+}
+
+.modal h2 {
+  margin-bottom: 20px;
+}
+
+.modal form {
+  text-align: left;
+}
+
+.modal label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.modal input[type="text"],
+.modal input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.modal button {
+  background-color: #FF694B;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.modal button:hover {
+  background-color: #e55d3d;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Стилі для контейнера Let's Talk */
+.lets-talk-container {
+  background-color: #F8F8F8;
+  padding: 50px 0;
+}
+
+.lets-talk-container .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.lets-talk-container .logo {
+  width: 66px;
+  height: 66px;
+}
+
+.lets-talk-container h2 {
+  font-size: 48px;
+  color: #3A362A;
+  font-weight: 400;
+  margin-top: 60px;
+}
+
+.lets-talk-container p {
+  font-size: 18px;
+  color: #757683;
+  margin-top: 20px;
+}
+
+.lets-talk-container .social-links {
+  margin-top: 30px;
+}
+
+.lets-talk-container .social-links a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.lets-talk-container .social-links img {
+  width: 100px;
+  height: 100px;
+}
+
+/* Анімація для соціальних посилань */
+.social-links a {
+  display: inline-block;
+  margin: 0 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-links a:hover {
+  transform: scale(1.2); /* Збільшення масштабу при наведенні */
+}
+
+
+.footer {
+  background-color: #FFFFFF;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #899098;
+  font-size: 12px;
+  font-weight: normal;
+}
