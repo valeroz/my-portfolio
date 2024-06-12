@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>valeroz</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Подключение шрифта IBM Plex Sans -->
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://apis.google.com/js/api.js"></script>
+</head>
+<body>
+    <div class="menu-bar">
+        <a href="#hero-banner" class="menu-link">Start</a>
+        <a href="#services-container" class="menu-link">Services</a>
+        <a href="#education-container" class="menu-link">Portfolio</a>
+        <a href="#portfolio-section" class="menu-link">News</a>
+        <a href="#contact" class="menu-link">Contact</a>
+        <div class="login">Login</div>
+    </div>
+    
+    <!-- Modal for Login -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Login</h2>
+            <form id="loginForm">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit">Login</button>
+            </form>
+            <p>Don't have an account? <a href="#" id="showRegister"><u>Register here</u></a></p>
+        </div>
+    </div>
+    
+    <!-- Modal for Register -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Register</h2>
+            <form id="registerForm">
+                <label for="newUsername">Username:</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+                <label for="newPassword">Password:</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </div>
+    
+    
+
+<!-- Головний банер -->
+<div class="container" id="hero-banner">
+    <div class="hero-banner">
+        <img src="img/1.png" alt="" class="hero-image">
+        <div class="short-title">
+            <div class="line"></div>
+            <p class="title-text">UI/UX Designer & Developer</p>
+        </div>
+        <div class="banner-content">
+            <h2 class="subtitle">Live, Create & learn</h2>
+            <div class="description">
+                <div class="vertical-line"></div>
+                <p>Hi, I’m Valeriy. I’m UI/UX Designer. If you are looking for Designer to build your brands and grow your business Let’s shake hands with me.</p>
+            </div>
+            <div class="cta">
+                <div class="bg">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7 17L17 7" stroke="#FFFFFF" stroke-opacity="1" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                        <path d="M7 7L17 7L17 17" stroke="#FFFFFF" stroke-opacity="1" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <p class="hire-me">Hire Me Now</p>
+            </div>
+        </div>
+        <div class="banner-extra">
+            <p class="extra-title">— Our Projects</p>
+            <h3 class="extra-subtitle">Portfolio<br>Landing UI</h3>
+            <a href="#services-container" class="explore-now">Explore Now</a>
+        </div>
+    </div>
+</div>
+
+
+<div class="container" id="project-container">
+    <h2 class="section-title">Work examples</h2>
+    <div class="gallery">
+        <div class="gallery-item">
+            <a href="https://www.figma.com/design/qbrylMbolKPzgP8YZ7IY1Z/Valeriy-Brazhnikov-dz1?node-id=46-119&t=WHkvezVoylp4j8Zr-4" target="_blank">
+                <img src="img/pr1.png" alt="Website designs">
+                <div class="gallery-content">
+                    <p class="project-title">Website designs</p>
+                    <p class="project-description">High-quality and bright landing pages for your online stores to effectively attract customers</p>
+                </div>
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://www.figma.com/design/gtbToCakJckjFU5Y2wtQ9j/Resume-v.1?node-id=779-307&t=R4UKM0L8kaTybzX7-4" target="_blank">
+                <img src="img/pr2.png" alt="Landing page">
+                <div class="gallery-content">
+                    <p class="project-title">Landing page</p>
+                    <p class="project-description">An interesting and unique design for your portfolio that will complement your workspace</p>
+                </div>
+            </a>
+        </div>
+        <div class="gallery-item">
+            <a href="https://brazhnikov2002vs.wixsite.com/my-site" target="_blank">
+                <img src="img/pr3.png" alt="Online stores">
+                <div class="gallery-content">
+                    <p class="project-title">Online stores</p>
+                    <p class="project-description">High-quality and vibrant online store designs to boost your sales and attract more customers</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- Сервіси -->
+<div class="container" id="services-container">
+    <div class="services-container">
+        <h2 class="services-title">Our Services</h2>
+        <div class="services-blocks">
+            <div class="service-block" onclick="scrollToContact()">
+                <div class="service-header">
+                    <img src="img/s1.svg" alt="Service 1 Icon" class="service-icon">
+                    <h3 class="service-title">Front-end<br> Development</h3>
+                </div>
+                <p class="service-description">Creating visually stunning and responsive websites using modern web technologies.</p>
+            </div>
+            <div class="service-block" onclick="scrollToContact()">
+                <div class="service-header">
+                    <img src="img/s2.svg" alt="Service 2 Icon" class="service-icon">
+                    <h3 class="service-title">Back-end<br> Development</h3>
+                </div>
+                <p class="service-description">Building robust and scalable server-side applications to power your web services.</p>
+            </div>
+            <div class="service-block" onclick="scrollToContact()">
+                <div class="service-header">
+                    <img src="img/s3.svg" alt="Service 3 Icon" class="service-icon">
+                    <h3 class="service-title">Online store<br> development</h3>
+                </div>
+                <p class="service-description">Developing secure and efficient e-commerce solutions to grow your online business.</p>
+            </div>
+            <div class="service-block" onclick="scrollToContact()">
+                <div class="service-header">
+                    <img src="img/s4.svg" alt="Service 4 Icon" class="service-icon">
+                    <h3 class="service-title">UI/UX Design</h3>
+                </div>
+                <p class="service-description">Crafting user-friendly interfaces and experiences that enhance customer satisfaction.</p>
+            </div>
+            <div class="service-block" onclick="scrollToContact()">
+                <div class="service-header">
+                    <img src="img/s5.svg" alt="Service 5 Icon" class="service-icon">
+                    <h3 class="service-title">Web and Mobile<br> App Design</h3>
+                </div>
+                <p class="service-description">Designing intuitive and engaging apps for both web and mobile platforms.</p>
+            </div>
+        </div>  
+    </div>
+</div>
+
+<!-- Освіта -->
+<div class="container" id="education-container">
+    <div class="education-container">
+        <div class="education-block">
+            <h2 class="education-header">🎓 Education</h2>
+            <div class="education-item">
+                <div class="education-details">
+                    <p class="education-title">Information systems and technologies</p>
+                    <p class="education-description">Kharkiv State Academy of Municipal Economics</p>
+                </div>
+                <div class="education-dates">
+                    <p>2020 - 2024</p>
+                </div>
+            </div>
+            <div class="education-divider"></div>
+            <div class="education-item">
+                <div class="education-details">
+                    <p class="education-title">Design and layout</p>
+                    <p class="education-description">Genius Space courses</p>
+                </div>
+                <div class="education-dates">
+                    <p>2023 - 2024</p>
+                </div>
+            </div>
+            <div class="education-divider"></div>
+            <div class="education-item">
+                <div class="education-details">
+                    <p class="education-title">Master In Graphic</p>
+                    <p class="education-description">Kharkov Cooperative Trade and Economic College</p>
+                </div>
+                <div class="education-dates">
+                    <p>2020 - 2024</p>
+                </div>
+            </div>
+        </div>
+        <div class="education-photo-wrapper">
+            <img src="img/2.png" class="education-photo">
+        </div>
+    </div>
+</div>
+
+<!-- Коротка інформація -->
+<div class="container" id="about-container">
+    <div class="about-container">
+    <img src="img/3.png" class="about-image">
+    <div class="about-content">
+        <h2 class="about-title">From Big to Small Clients,<br>Two Things I Always Promise</h2>
+        <div class="about-subblocks">
+            <div class="about-subblock">
+                <div class="about-number">1</div>
+                <div class="about-subblock-content">
+                    <h3 class="subblock-title">The design you want</h3>
+                    <p class="subblock-description">It is important for us to create a style<br>that will please you</p>
+                </div>
+            </div>
+            <div class="about-subblock">
+                <div class="about-number">2</div>
+                <div class="about-subblock-content">
+                    <h3 class="subblock-title">Friendly Relationship</h3>
+                    <p class="subblock-description">We put our soul into every project,<br>building friendly relationships with<br>each client</p>
+                </div>
+            </div>
+        </div>
+        <div class="about-stats">
+            <div class="stat-block">
+                <h3 class="stat-title"><span class="stat-number">2</span> Years Experience</h3>
+            </div>
+            <div class="stat-block">
+                <h3 class="stat-title"><span class="stat-number">5</span> Satisfied Clients</h3>
+            </div>
+            <div class="stat-block">
+                <h3 class="stat-title"><span class="stat-number">11</span> Projects Completed</h3>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<div class="container" id="cta-container">
+    <div class="cta-container">
+        <img src="img/4.png" class="cta-image">
+        <div class="cta-content">
+            <h2 class="cta-title">Have Any Project in Mind?<br>
+            Don’t Be Hesitate to Contact Us</h2>
+            <p class="cta-description">Ready to make something kickass? Let's get on a call.</p>
+        <a href="#contact" class="menu-link">
+            <button class="cta-button" >Get In Touch</button>
+        </a>
+        </div>
+    </div>
+</div>
+<!-- Блог і новини -->
+<div id="portfolio-section" class="container">
+    <div class="portfolio-section">
+        <h2>Blog & News</h2>
+        <div id="news-list" class="news-list"></div>       
+    </div>
+</div>
+
+<!-- Контакти -->
+<div id="contact" class="container">
+    <h2 style="font-family: 'IBM Plex Sans', sans-serif;">Contact Us</h2>
+    <form id="contactForm">
+      <label for="contactName">Name:</label>
+      <input type="text" id="contactName" name="contactName" required>
+      <label for="contactEmail">Email:</label>
+      <input type="email" id="contactEmail" name="contactEmail" required>
+      <label for="contactMessage">Message:</label>
+      <textarea id="contactMessage" name="contactMessage" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </div>
+
+<!-- Контейнер Let's Talk -->
+<div class="lets-talk-container">
+    <div class="container">
+        <img src="img/logo.png" alt="Logo" class="logo">
+        <h2>Let's Talk with Me!</h2>
+        <p>I am always open to discuss your project, improve your
+            <br>online presence or help with your UX/UI design.</p>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=100013510996340" target="_blank"><img src="img/Fb.png" alt="Facebook"></a>
+            <a href="https://t.me/Valeros_Alliance" target="_blank"><img src="img/Telegram.png" alt="Telegram"></a>
+            <a href="https://uadd.me/valeroz_WD" target="_blank"><img src="img/uadd.png" alt="uadd"></a>
+            <a href="https://www.instagram.com/valeriy_work/" target="_blank"><img src="img/instagram.png" alt="Instagram"></a>
+        </div>
+    </div>
+</div>
+<!-- Футер -->
+<footer class="footer">
+    <div class="footer-content">
+        Copyright © 2024 by Brazhnikov Valeriy. All Rights Reserved.
+    </div>
+</footer>
+
+<div id="popup" class="popup"></div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const menuLinks = document.querySelectorAll(".menu-link");
+
+    // Функція для обробки плавної прокрутки та виділення активного посилання
+    function handleScroll() {
+        const scrollPosition = window.scrollY;
+        menuLinks.forEach(link => {
+            const section = document.querySelector(link.getAttribute("href"));
+            const offset = 100; // Кількість пікселів до верху секції, щоб активувати її раніше
+            if (
+                section.offsetTop - offset <= scrollPosition &&
+                section.offsetTop + section.offsetHeight - offset > scrollPosition
+            ) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+
+        // Додаткова логіка для активної секції "Portfolio"
+        const portfolioLink = document.querySelector(".menu-link[href='#portfolio-section']");
+        const portfolioContainers = ['#education-container', '#about-container', '#cta-container'];
+        let isPortfolioActive = false;
+
+        portfolioContainers.forEach(containerSelector => {
+            const container = document.querySelector(containerSelector);
+            if (
+                container.offsetTop - offset <= scrollPosition &&
+                container.offsetTop + container.offsetHeight - offset > scrollPosition
+            ) {
+                isPortfolioActive = true;
+            }
+        });
+
+        if (isPortfolioActive) {
+            portfolioLink.classList.add("active");
+        } else {
+            portfolioLink.classList.remove("active");
+        }
+    }
+
+    // Плавна прокрутка
+    menuLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();
+            const targetSection = document.querySelector(this.getAttribute("href"));
+            window.scrollTo({
+                top: targetSection.offsetTop - 60, // Відняти висоту меню для правильного позиціонування
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Обробник подій прокрутки
+    window.addEventListener("scroll", handleScroll);
+
+    // Прокрутка до контактної секції
+    function scrollToContact() {
+        const contactSection = document.querySelector("#contact");
+        window.scrollTo({
+            top: contactSection.offsetTop - 60, // Відняти висоту меню для правильного позиціонування
+            behavior: 'smooth'
+        });
+    }
+
+    // Додати подію на кнопку Explore Now
+    const exploreNowButton = document.querySelector(".explore-now");
+    exploreNowButton.addEventListener("click", function (e) {
+        e.preventDefault();
+        const servicesSection = document.querySelector("#services-container");
+        window.scrollTo({
+            top: servicesSection.offsetTop - 60, // Відняти висоту меню для правильного позиціонування
+            behavior: 'smooth'
+        });
+    });
+
+    // Додати функцію прокрутки до контактної секції для блоків сервісів
+    const serviceBlocks = document.querySelectorAll(".service-block");
+    serviceBlocks.forEach(block => {
+        block.addEventListener("click", scrollToContact);
+    });
+});
+
+</script>
+<script src="script.js"></script>
+</body>
+</html>
